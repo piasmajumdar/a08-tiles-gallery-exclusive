@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       className={`${inter.className} h-full antialiased`}
       data-theme="light"
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#F8F7F4]">
         {children}
       </body>
     </html>

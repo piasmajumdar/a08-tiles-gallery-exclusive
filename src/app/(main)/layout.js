@@ -1,10 +1,13 @@
+import Footer from '@/components/shared/Footer';
 import Navbar from '@/components/shared/Navbar';
 import React from 'react';
 
-const HomeLayout = ({children}) => {
+const HomeLayout = ({ children }) => {
     return (
         <div>
             <Navbar></Navbar>
+            {children}
+            <Footer></Footer>
         </div>
     );
 };
