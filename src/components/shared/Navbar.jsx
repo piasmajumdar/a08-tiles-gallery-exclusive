@@ -1,4 +1,8 @@
 import Link from "next/link";
+import tileIcon from "../../../public/icons8-tiles-66.png"
+import Image from "next/image";
+import { playFair } from "@/app/layout";
+import { FaUser } from "react-icons/fa";
 
 const Navbar = () => {
     const links = <>
@@ -20,7 +24,10 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link href={'/'} className="btn-ghost text-xl font-bold cursor-pointer">TilesGallery</Link>
+                    <Link href={'/'} className={`${playFair.className} btn-ghost text-xl font-bold cursor-pointer flex items-center gap-1`}>
+                        <Image src={tileIcon} alt="fav" height={40} width={40}></Image>
+                        TilesGallery
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-4">
@@ -28,7 +35,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn text-white bg-black rounded-lg">Login</a>
+                    <Link href={'/auth/login'} className="btn text-white bg-black rounded-lg"><FaUser/> Login</Link>
                 </div>
             </div>
         </div>
