@@ -3,15 +3,16 @@ import tileIcon from "../../../public/icons8-tiles-66.png"
 import Image from "next/image";
 import { playFair } from "@/app/layout";
 import { FaUser } from "react-icons/fa";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
     const links = <>
-        <Link className="font-bold btn border-0" href={'/'}>Home</Link>
-        <Link className="font-bold btn border-0" href={'/all-tiles'}>All Tiles</Link>
-        <Link className="font-bold btn border-0" href={'/profile'}>My Profile</Link>
+        <li><NavLink href={'/'}>Home</NavLink></li>
+        <li><NavLink href={'/all-tiles'}>All Tiles</NavLink></li>
+        <li><NavLink href={'/profile'}>My Profile</NavLink></li>
     </>
     return (
-        <div className="shadow-sm backdrop-blur-xl bg-white/20 backdrop-saturate-150">
+        <div className="backdrop-blur-xl bg-white/20 backdrop-saturate-150 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
             <div className="navbar w-11/12 mx-auto ">
                 <div className="navbar-start">
                     <div className="dropdown">

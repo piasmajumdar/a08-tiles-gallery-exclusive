@@ -11,6 +11,7 @@ import {
     FaLinkedinIn,
 } from "react-icons/fa";
 import Image from "next/image";
+import { playFair } from "@/app/layout";
 
 export default function Footer() {
     const year = format(new Date(), 'yyyy')
@@ -23,7 +24,7 @@ export default function Footer() {
 
                     {/* Brand */}
                     <div>
-                        <Link href={'/'} className="text-3xl font-bold font-serif flex items-center gap-1">
+                        <Link href={'/'} className={`${playFair.className} text-3xl font-bold flex items-center gap-1`}>
                             <Image src={tileIcon} alt="fav" height={40} width={40}></Image>
                             TilesGallery
                         </Link>
