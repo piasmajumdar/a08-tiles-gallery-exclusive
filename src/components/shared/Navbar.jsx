@@ -2,24 +2,15 @@ import Link from "next/link";
 import tileIcon from "../../../public/icons8-tiles-66.png"
 import Image from "next/image";
 import { playFair } from "@/app/layout";
-import { FaUser } from "react-icons/fa";
 import NavLink from "./NavLink";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
+import NavUserSection from "./NavUserSection";
 
-const Navbar = async() => {
+const Navbar = async () => {
     const links = <>
         <li><NavLink href={'/'}>Home</NavLink></li>
         <li><NavLink href={'/all-tiles'}>All Tiles</NavLink></li>
         <li><NavLink href={'/profile'}>My Profile</NavLink></li>
     </>
-
-
-    const {session} = await auth.api.getSession({
-        headers: await headers()
-    })
-
-    console.log(session)
 
     return (
         <div className="backdrop-blur-xl bg-white/20 backdrop-saturate-150 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
@@ -45,9 +36,7 @@ const Navbar = async() => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <Link href={'/auth/login'} className="btn text-white bg-black rounded-lg"><FaUser /> Login</Link>
-                </div>
+                <NavUserSection></NavUserSection>
             </div>
         </div>
     );
