@@ -21,7 +21,7 @@ const SignUpPage = () => {
             email: email, // required
             password: password, // required
             image: photo,
-            callbackURL: "http://localhost:3000",
+            callbackURL: process.env.BETTER_AUTH_URL,
         });
 
         if(error){

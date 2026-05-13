@@ -1,14 +1,36 @@
 "use client"
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const LoginPage = () => {
-    const {register, handleSubmit, formState: { errors }} = useForm();
+    const router = useRouter()
+    const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const handleLogin = async(data) =>{
-        console.log(data)
+    const handleLogin = async (formData) => {
+        // console.log(formData)
+        const { email, password } = formData;
+
+        const { data: res, error } = await authClient.signIn.email({
+            email: email, // required
+            password: password, // required
+            rememberMe: true,
+            callbackURL: process.env.BETTER_AUTH_URL,
+        });
+        if (res) {
+            toast.success("Login Up Successful");
+            router.push('/')
+        }
+
+        if (error) {
+            toast.error(error.message)
+        }
+
     }
+
     return (
         <div className='h-screen flex justify-center items-center mx-auto'>
             <form onSubmit={handleSubmit(handleLogin)} className='bg-white rounded-lg shadow-2xl p-6 sm:w-sm space-y-2'>
@@ -21,20 +43,20 @@ const LoginPage = () => {
 
                 <fieldset className="fieldset">
                     <label className="label">Email</label>
-                    <input 
-                    type="email" 
-                    className="input w-full" 
-                    placeholder="Email" 
-                    {...register("email", { required: "Email is Required" })}/>
-                    
+                    <input
+                        type="email"
+                        className="input w-full"
+                        placeholder="Email"
+                        {...register("email", { required: "Email is Required" })} />
+
                 </fieldset>
                 <fieldset className="fieldset">
                     <label className="label">Password</label>
-                    <input 
-                    type="password" 
-                    className="input w-full" 
-                    placeholder="Password" 
-                    {...register("password", { required: "Password is required" })}/>
+                    <input
+                        type="password"
+                        className="input w-full"
+                        placeholder="Password"
+                        {...register("password", { required: "Password is required" })} />
                 </fieldset>
                 <button className="btn btn-neutral mt-4 w-full">Login</button>
                 <h2>Don't have an account? <Link href={'/auth/register'} className='text-blue-800'>Register</Link></h2>
