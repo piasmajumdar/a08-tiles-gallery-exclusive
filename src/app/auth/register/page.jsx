@@ -1,10 +1,41 @@
+'use client'
+
+import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const SignUpPage = () => {
+    const router = useRouter();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const handleRegister = async (formData) => {
+        // console.log(formData)
+        const {name, email, photo, password} = formData;
+        // console.log(name, email, photo, password)
+
+        const { data:res, error } = await authClient.signUp.email({
+            name: name, // required
+            email: email, // required
+            password: password, // required
+            image: photo,
+            callbackURL: "http://localhost:3000",
+        });
+
+        if(error){
+            toast.error(error.message)
+        }
+        if(res){
+            toast.success("Sign Up Successful")
+            router.push('/')
+        }
+    }
+
     return (
         <div className='h-screen flex justify-center items-center mx-auto'>
-            <div className='bg-white rounded-lg shadow-2xl p-6 sm:w-sm space-y-2'>
+            <form onSubmit={handleSubmit(handleRegister)} className='bg-white rounded-lg shadow-2xl p-6 sm:w-sm space-y-2'>
                 <h2 className='text-3xl text-center'>Please Sign Up!</h2>
                 {/* Google */}
                 <button className="btn bg-white text-black my-5 w-full border-[#e5e5e5]">
@@ -13,19 +44,44 @@ const SignUpPage = () => {
                 </button>
                 <fieldset className="fieldset">
                     <label className="label">Name</label>
-                    <input type="text" className="input w-full" placeholder="Name" />
+                    <input
+                        type="text"
+                        className="input w-full"
+                        placeholder="Name"
+                        {...register("name", { required: "Name is required" })}
+                    />
+                    {errors.name && <small className='text-red-500'>{errors.name.message}</small>}
+
                 </fieldset>
                 <fieldset className="fieldset">
                     <label className="label">Email</label>
-                    <input type="email" className="input w-full" placeholder="Email" />
+                    <input
+                        type="email"
+                        className="input w-full"
+                        placeholder="Email"
+                        {...register("email", { required: "Email is Required" })} />
+
+                </fieldset>
+                <fieldset className="fieldset">
+                    <label className="label">Photo URL</label>
+                    <input
+                        type="text"
+                        className="input w-full"
+                        placeholder="photo"
+                        {...register("photo", { required: "Photo is Required" })} />
+
                 </fieldset>
                 <fieldset className="fieldset">
                     <label className="label">Password</label>
-                    <input type="password" className="input w-full" placeholder="Password" />
+                    <input
+                        type="password"
+                        className="input w-full"
+                        placeholder="Password"
+                        {...register("password", { required: "Password is required" })} />
                 </fieldset>
                 <button className="btn btn-neutral mt-4 w-full">Sign Up</button>
                 <h2>Already have an account? <Link href={'/auth/login'} className='text-blue-800'>Login</Link></h2>
-            </div>
+            </form>
         </div>
     );
 };
