@@ -13,7 +13,7 @@ const NavLink = ({ className, children, href }) => {
             href={href}
             className={
                 `btn
-                ${isActive ? "bg-black/10" : ""} ${className} 
+                ${isActive ? "text-[#af8e08] after:w-3/4" : ""} ${className} 
                 transition-all duration-300 ease-in-out
 
             
@@ -27,7 +27,7 @@ const NavLink = ({ className, children, href }) => {
 
             after:absolute after:left-1/2 after:-bottom-1
             after:h-0.5 after:w-0
-            after:bg-black
+            after:bg-[#af8e08]
             after:transition-all after:duration-300
             after:-translate-x-1/2
 

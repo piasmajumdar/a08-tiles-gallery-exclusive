@@ -13,7 +13,7 @@ const Navbar = async () => {
     </>
 
     return (
-        <div className="backdrop-blur-xl bg-white/20 backdrop-saturate-150 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
+        <div className="sticky w-screen top-0 z-200 backdrop-blur-xl bg-white/20 backdrop-saturate-150 shadow-[0_8px_32px_rgba(0,0,0,0.2)]">
             <div className="navbar w-11/12 mx-auto ">
                 <div className="navbar-start">
                     <div className="dropdown">
