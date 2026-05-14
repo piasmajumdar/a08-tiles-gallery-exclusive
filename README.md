@@ -1,36 +1,304 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🧱 Tiles Gallery
 
-## Getting Started
+A modern and responsive tile showcase web application built with Next.js App Router.  
+Users can explore beautiful tile collections, search tiles, view detailed information, and manage their profile securely with authentication.
 
-First, run the development server:
+---
+
+## 🌐 Live Website
+
+🔗 Live URL: https://a08-tiles-gallery-exclusive.vercel.app/
+---
+
+## 📌 Project Purpose
+
+The purpose of this project is to create a visually appealing and responsive tile gallery platform where users can:
+
+- Browse aesthetic tile collections
+- Search and explore tile designs
+- View detailed tile information
+- Authenticate securely
+- Manage personal profile information
+
+This project was developed for **Assignment Category: category-A8-Apple**.
+
+---
+
+# ✨ Features
+
+## 🏠 Home Page
+- Beautiful hero banner with CTA button
+- Animated marquee section
+- Featured tiles section
+- Responsive modern UI
+
+## 🖼️ Tiles Gallery
+- Display all tiles dynamically from JSON Server
+- Search tiles by title/category
+- Responsive tile card layout
+
+## 🔍 Tile Details Page
+- Large tile preview image
+- Creator information
+- Style description
+- Tags and design categories
+- Protected private route
+
+## 🔐 Authentication
+- Email & Password Login/Register
+- Google Authentication
+- Secure authentication using BetterAuth
+- MongoDB Adapter integration
+- Toast/Error handling
+
+## 👤 My Profile
+- View logged-in user profile
+- Update name and profile image
+- Private route protection
+
+## 🎨 UI & UX
+- Fully responsive design
+- Modern aesthetic layout
+- Smooth animations
+- SwiperJS slider integration
+- Animate.css effects
+
+## ⚙️ Additional Functionalities
+- Loading spinner during data fetching
+- Custom 404 Not Found page
+- Environment variable protection
+- Route protection for private pages
+
+---
+
+# 🚦 Route Permissions
+
+| Route | Access |
+|------|------|
+| `/` | Public |
+| `/all-tiles` | Public |
+| `/login` | Public |
+| `/register` | Public |
+| `/tile/[id]` | Private |
+| `/my-profile` | Private |
+
+---
+
+# 🛠️ Technologies Used
+
+## Frontend
+- Next.js 15 (App Router)
+- React
+- Tailwind CSS
+- DaisyUI
+- HeroUI
+
+## Authentication
+- BetterAuth
+- MongoDB Adapter
+
+## Backend / Database
+- MongoDB
+- JSON Server
+
+## Animation & UI Libraries
+- Animate.css
+- SwiperJS
+- React Icons
+
+---
+
+# 📦 NPM Packages Used
+
+```bash
+npm install next react react-dom
+
+npm install tailwindcss @tailwindcss/postcss postcss
+
+npm install daisyui
+
+npm install @heroui/react
+
+npm install better-auth
+
+npm install mongodb
+
+npm install react-icons
+
+npm install swiper
+
+npm install animate.css
+
+npm install react-fast-marquee
+
+npm install sonner
+
+npm install axios
+```
+
+---
+
+# ⚙️ Tailwind CSS Setup
+
+## Install Tailwind CSS
+
+```bash
+npm install tailwindcss @tailwindcss/postcss postcss
+```
+
+## Configure `postcss.config.mjs`
+
+```js
+const config = {
+  plugins: ["@tailwindcss/postcss"],
+};
+
+export default config;
+```
+
+## Configure `globals.css`
+
+```css
+@import "tailwindcss";
+@plugin "daisyui";
+@import "animate.css";
+```
+
+---
+
+# 🌼 DaisyUI Setup
+
+## Install DaisyUI
+
+```bash
+npm install daisyui
+```
+
+## Add DaisyUI Plugin
+
+```css
+@plugin "daisyui";
+```
+
+---
+
+# 📂 JSON Data Structure
+
+```json
+{
+            "id": "tile_001",
+            "title": "Ceramic Blue Tile",
+            "description": "Premium ceramic tile with glossy blue glaze finish",
+            "image": [
+                "https://images.pexels.com/photos/7245524/pexels-photo-7245524.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+                "https://images.unsplash.com/photo-1690983321651-2510fe685fc6?w=400&h=400&fit=crop&auto=format&q=80",
+                "https://images.unsplash.com/photo-1614598632980-35ee54daa5b9?w=400&h=400&fit=crop&auto=format&q=80",
+                "https://images.unsplash.com/photo-1523350165414-082d792c4bcc?w=400&h=400&fit=crop&auto=format&q=80"
+            ],
+            "category": "ceramic",
+            "price": 45.99,
+            "currency": "USD",
+            "dimensions": "60x60 cm",
+            "material": "Ceramic",
+            "inStock": true,
+            "creator": "ArtisanCeramics Co.",
+            "styleDescription": "A vibrant glossy blue ceramic tile that adds a bold, Mediterranean-inspired charm to kitchens and bathrooms.",
+            "tags": [
+                "Glossy",
+                "Blue",
+                "Ceramic",
+                "Mediterranean",
+                "Wall Tile"
+            ],
+            "style": "Mediterranean",
+            "finish": "Glossy"
+        }
+```
+
+---
+
+# 🔑 Environment Variables
+
+Create a `.env.local` file in the root directory and add:
+
+```env
+MONGODB_URI=your_mongodb_uri
+BETTER_AUTH_SECRET=your_secret_key
+BETTER_AUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+---
+
+# 🚀 Installation & Setup
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/piasmajumdar/a08-tiles-gallery-exclusive
+```
+
+## Navigate to Project Folder
+
+```bash
+cd tiles-gallery
+```
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# 📱 Responsiveness
 
-To learn more about Next.js, take a look at the following resources:
+The website is optimized for:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 📱 Mobile Devices
+- 💻 Laptops
+- 🖥️ Desktop Screens
+- 📟 Tablets
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+# 🎯 Challenge Features Implemented
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+✅ My Profile Page  
+✅ Update User Information  
+✅ Google Login  
+✅ SwiperJS Integration  
+✅ Animate.css Animations  
+✅ Protected Routes  
+✅ Custom Not Found Page  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+# 📸 Screenshots
+
+
+---
+
+# 👨‍💻 Developer
+
+Developed by **Pias Majumdar**
+
+---
+
+# 📄 License
+
+This project is created for educational purposes only.
