@@ -3,12 +3,25 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaUser } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 
 const NavUserSection = () => {
     const { data: session, isPending } = authClient.useSession()
     // console.log(session?.user)
+    const router = useRouter();
+
+    const handleLogout = async () => {
+        const { error } = await authClient.signOut()
+        if (error) {
+            toast.error(error.message)
+            return
+        }
+        toast.success("Logout successful")
+        router.push('/auth/login')
+    }
 
     return (
         <div className="navbar-end">
@@ -39,12 +52,12 @@ const NavUserSection = () => {
                                             <span className="badge">New</span>
                                         </Link>
                                     </li>
-                                    <li><button onClick={async () => await authClient.signOut()}>Logout</button></li>
+                                    <li><button onClick={handleLogout}>Logout</button></li>
                                 </ul>
                             </div>
                         </div>
 
-                        <button onClick={async () => await authClient.signOut()} className="btn text-white bg-black rounded-lg hidden sm:flex"> <FaUser /> Logout</button>
+                        <button onClick={handleLogout} className="btn text-white bg-black rounded-lg hidden sm:flex"> <FaUser /> Logout</button>
                     </div>
 
                     : <div>

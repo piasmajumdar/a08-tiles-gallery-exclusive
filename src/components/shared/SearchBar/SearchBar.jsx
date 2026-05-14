@@ -26,11 +26,11 @@ export default function SearchBar() {
 
                 {/* Heading */}
                 <div className="text-center mb-8">
-                    <h1 className={`text-5xl font-bold text-[#1e1e1e]`}>
+                    <h1 className={`text-3xl sm:text-5xl font-bold text-[#1e1e1e]`}>
                         Discover Premium Tiles
                     </h1>
 
-                    <p className="text-gray-500 mt-4 text-lg">
+                    <p className="text-gray-500 mt-4 sm:text-lg">
                         Search tiles by title, material, style, or aesthetic.
                     </p>
                 </div>
@@ -43,11 +43,11 @@ export default function SearchBar() {
                         type="text"
                         name="searchInput"
                         placeholder="Search tiles by title..."
-                        className="w-full h-[72px] rounded-full bg-white pl-8 pr-36 text-lg text-black placeholder:text-gray-400 border border-gray-200 outline-none shadow-[0_10px_40px_rgba(0,0,0,0.06)] focus:border-black transition-all duration-300"
+                        className="w-full h-12 sm:h-[72px] rounded-full bg-white pl-8 pr-36 text-lg text-black placeholder:text-gray-400 border border-gray-200 outline-none shadow-[0_10px_40px_rgba(0,0,0,0.06)] focus:border-black transition-all duration-300"
                     />
 
                     {/* Search Button */}
-                    <button className="absolute right-3 top-1/2 -translate-y-1/2 h-[58px] px-8 rounded-full bg-black hover:bg-[#b08244] text-white text-base font-semibold flex items-center gap-2 transition-all duration-300">
+                    <button className="absolute right-2 top-1/2 -translate-y-1/2 h-9 sm:h-[58px] px-2 sm:px-8 rounded-full bg-black hover:bg-[#b08244] text-white text-base font-semibold flex items-center gap-2 transition-all duration-300">
                         <IoSearch size={22} />
                         Search
                     </button>

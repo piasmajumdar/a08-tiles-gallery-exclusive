@@ -20,5 +20,5 @@ export async function proxy(request) {
 // export default function proxy(request) { ... }
 
 export const config = {
-    matcher: ['/profile', '/tile-details/:path*'],
+    matcher: ['/profile','/profile/update-info', '/tile-details/:path*'],
 }

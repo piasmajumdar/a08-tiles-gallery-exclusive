@@ -55,7 +55,7 @@ const MyProfilePage = async () => {
 
 
                         <div className="mt-8 space-y-5">
-                            
+
                             <div className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 pb-3">
                                 <div className="flex items-center gap-3">
                                     <MdOutlineManageAccounts className="text-[#b08244] text-2xl" />
@@ -63,7 +63,7 @@ const MyProfilePage = async () => {
                                 </div>
                                 <span className="text-gray-600">{user?.name}</span>
                             </div>
-                            
+
                             <div className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 pb-3">
                                 <div className="flex items-center gap-3">
                                     <MdEmail className="text-[#b08244] text-2xl" />
@@ -77,12 +77,18 @@ const MyProfilePage = async () => {
                                     <MdAddAPhoto className="text-[#b08244] text-4xl" />
                                     <span className="font-semibold">Photo URL</span>
                                 </div>
-                                <span className="text-gray-600 line-clamp-1">{user?.image}</span>
+                                <span className="text-gray-600">
+                                    {
+                                        user?.image.length > 30
+                                            ? user?.image.slice(0, 30) + "..."
+                                            : user?.image
+                                    }
+                                </span>
                             </div>
 
                         </div>
 
-                        <Link href={'/profile/update'} className="btn w-full text-white bg-black rounded-lg mt-6"><FaUser /> Update Profile</Link>
+                        <Link href={'/profile/update-info'} className="btn w-full text-white bg-black rounded-lg mt-6"><FaUser /> Update Profile</Link>
 
 
                     </div>
