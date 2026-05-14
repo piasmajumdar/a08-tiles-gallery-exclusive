@@ -9,7 +9,7 @@ const TilesCard = ({tile}) => {
         <div className="card bg-base-100 hover:scale-105 hover:shadow-amber-700 hover:shadow-md shadow-sm">
             <figure className='h-[200px]'>
                 <Image
-                    src={image}
+                    src={image[0]}
                     alt={title}
                     height={400}
                     width={400}
