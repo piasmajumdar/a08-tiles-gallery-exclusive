@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const TilesCard = ({tile}) => {
-    console.log(tile)
+    // console.log(tile)
     const {title, image, description, category, price} = tile;
     return (
         <div className="card bg-base-100 hover:scale-105 hover:shadow-amber-700 hover:shadow-md shadow-sm">
@@ -19,7 +20,7 @@ const TilesCard = ({tile}) => {
                 <p>{category.charAt(0).toUpperCase() + category.slice(1)}</p>
                 <p className='font-bold text-lg'>${price}</p>
                 <div className="card-actions">
-                    <button className="btn w-full hover:border-amber-700 rounded-full">View Details</button>
+                    <Link href={`/tile-details/${tile.id}`} className="btn w-full hover:border-amber-700 rounded-full">View Details</Link>
                 </div>
             </div>
         </div>
