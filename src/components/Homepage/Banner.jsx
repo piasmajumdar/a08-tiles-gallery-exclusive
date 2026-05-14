@@ -8,6 +8,7 @@ import { FaArrowRightArrowLeft, FaArrowRightLong, FaDiamond } from 'react-icons/
 import { GoShieldCheck } from 'react-icons/go';
 import { IoColorPaletteOutline, IoDiamondOutline } from 'react-icons/io5';
 import MarqueeBar from '../shared/MarqueeBar';
+import FeaturedTiles from './FeaturedTiles';
 
 const Banner = () => {
     return (
@@ -51,7 +52,6 @@ const Banner = () => {
                 </div>
 
                 <MarqueeBar></MarqueeBar>
-
             </div>
         </div>
     );
