@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="text-3xl relative">
+    <div className="relative">
       <Banner></Banner>
     </div>
   );
