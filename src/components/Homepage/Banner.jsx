@@ -7,6 +7,7 @@ import { FaUser } from 'react-icons/fa';
 import { FaArrowRightArrowLeft, FaArrowRightLong, FaDiamond } from 'react-icons/fa6';
 import { GoShieldCheck } from 'react-icons/go';
 import { IoColorPaletteOutline, IoDiamondOutline } from 'react-icons/io5';
+import MarqueeBar from '../shared/MarqueeBar';
 
 const Banner = () => {
     return (
@@ -49,10 +50,7 @@ const Banner = () => {
                     </div>
                 </div>
 
-                {/* Marquee */}
-                <Marquee speed={100} pauseOnHover={true} className='bg-black text-white py-2 rounded-md'>
-                    New Arrivals: Ceramic Premiere || Trending: Global Marbel
-                </Marquee>
+                <MarqueeBar></MarqueeBar>
 
             </div>
         </div>

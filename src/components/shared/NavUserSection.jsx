@@ -8,7 +8,7 @@ import { FaUser } from "react-icons/fa";
 
 const NavUserSection = () => {
     const { data: session, isPending } = authClient.useSession()
-    console.log(session?.user)
+    // console.log(session?.user)
 
     return (
         <div className="navbar-end">
