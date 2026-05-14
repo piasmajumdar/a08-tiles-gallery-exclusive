@@ -28,6 +28,7 @@ const TilesImageScroll = ({ tile }) => {
                     delay: 1000,
                     disableOnInteraction: false,
                 }}
+                loop={true}
             >
                 {
                     image.map((img, ind) => {
