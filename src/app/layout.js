@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Bounce, ToastContainer } from "react-toastify";
+import 'animate.css';
 
 export const inter = Inter({
   subsets: ["latin"],
