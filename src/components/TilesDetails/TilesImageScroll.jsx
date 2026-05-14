@@ -6,7 +6,7 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Swiper modules
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 // Swiper styles
 import "swiper/css";
@@ -20,10 +20,14 @@ const TilesImageScroll = ({ tile }) => {
     return (
         <div>
             <Swiper
-                modules={[Navigation, Pagination]}
+                modules={[Navigation, Pagination, Autoplay]}
                 slidesPerView={1}
                 navigation={true}
                 pagination={{ clickable: true }}
+                autoplay={{
+                    delay: 1000,
+                    disableOnInteraction: false,
+                }}
             >
                 {
                     image.map((img, ind) => {
