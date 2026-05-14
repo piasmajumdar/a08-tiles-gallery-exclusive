@@ -1,8 +1,7 @@
-import { playFair } from "@/app/layout";
 import SearchBar from "@/components/shared/SearchBar/SearchBar";
 import TilesCard from "@/components/shared/TilesCard/TilesCard";
 import { getAllTiles } from "@/lib/data";
-import Link from "next/link";
+
 
 const AllTilesPage = async ({ searchParams }) => {
     const { search } = await searchParams;
