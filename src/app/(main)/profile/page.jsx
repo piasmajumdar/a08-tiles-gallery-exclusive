@@ -33,7 +33,7 @@ const MyProfilePage = async () => {
                 <div>
 
                     <div>
-                        <div className="flex gap-6 flex-wrap">
+                        <div className="flex gap-6 flex-wrap justify-center sm:justify-start items-center">
                             <figure className=' w-[100px] h-[100px] rounded-full overflow-hidden flex justify-center items-center'>
                                 <Image
                                     src={user?.image}
@@ -42,10 +42,10 @@ const MyProfilePage = async () => {
                                     width={400}
                                     className='h-full w-full' />
                             </figure>
-                            <div>
-                                <h1 className="text-xl font-bold text-black">{user?.name}</h1>
-                                <p className="font-semibold mt-4 text-black">{user?.email}</p>
-                                <div className="mt-4">
+                            <div className="text-center sm:text-start">
+                                <h1 className="sm:text-xl font-bold text-black">{user?.name}</h1>
+                                <p className="mt-4 text-black">{user?.email}</p>
+                                <div className="mt-4 flex justify-center sm:justify-start">
                                     <div className="badge badge-success text-white px-4 py-3">
                                         Member
                                     </div>
@@ -56,7 +56,7 @@ const MyProfilePage = async () => {
 
                         <div className="mt-8 space-y-5">
                             
-                            <div className="flex items-center justify-between border-b border-gray-100 pb-3">
+                            <div className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 pb-3">
                                 <div className="flex items-center gap-3">
                                     <MdOutlineManageAccounts className="text-[#b08244] text-2xl" />
                                     <span className="font-semibold">Name</span>
@@ -64,7 +64,7 @@ const MyProfilePage = async () => {
                                 <span className="text-gray-600">{user?.name}</span>
                             </div>
                             
-                            <div className="flex items-center justify-between border-b border-gray-100 pb-3">
+                            <div className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 pb-3">
                                 <div className="flex items-center gap-3">
                                     <MdEmail className="text-[#b08244] text-2xl" />
                                     <span className="font-semibold">Email</span>
@@ -72,7 +72,7 @@ const MyProfilePage = async () => {
                                 <span className="text-gray-600">{user?.email}</span>
                             </div>
 
-                            <div className="flex items-center justify-between border-b border-gray-100 pb-3">
+                            <div className="flex flex-col sm:flex-row items-center justify-between border-b border-gray-100 pb-3">
                                 <div className="flex items-center gap-3">
                                     <MdAddAPhoto className="text-[#b08244] text-4xl" />
                                     <span className="font-semibold">Photo URL</span>
