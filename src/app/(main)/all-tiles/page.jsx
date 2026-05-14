@@ -18,8 +18,12 @@ const AllTilesPage = async ({ searchParams }) => {
             tile.title?.toLowerCase().includes(searchText) ||
             tile.category?.toLowerCase().includes(searchText) ||
             tile.description?.toLowerCase().includes(searchText) ||
-            tile.material?.toLowerCase().includes(searchText)
-        );
+            tile.material?.toLowerCase().includes(searchText) ||
+            tile.creator?.toLowerCase().includes(searchText) ||
+            tile.style?.toLowerCase().includes(searchText) ||
+            tile.tags?.some(tag =>
+                tag.toLowerCase().includes(searchText.toLowerCase())
+            ));
 
     } else {
 
