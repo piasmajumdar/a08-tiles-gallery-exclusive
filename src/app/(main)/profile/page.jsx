@@ -16,7 +16,7 @@ const MyProfilePage = async () => {
     const { user } = await auth.api.getSession({
         headers: await headers()
     })
-    console.log(user)
+    // console.log(user)
 
     return (
         <div className="bg-[#f8f7f4] min-h-screen p-4 md:p-8 mt-20">
@@ -77,7 +77,7 @@ const MyProfilePage = async () => {
                                     <MdAddAPhoto className="text-[#b08244] text-4xl" />
                                     <span className="font-semibold">Photo URL</span>
                                 </div>
-                                <span className="text-gray-600">{user?.image}</span>
+                                <span className="text-gray-600 line-clamp-1">{user?.image}</span>
                             </div>
 
                         </div>

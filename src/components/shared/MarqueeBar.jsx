@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee';
 
 const MarqueeBar = async () => {
     const tiles = await getTilesForMarqueeBar();
-    console.log(tiles)
+    // console.log(tiles)
 
     return (
         <div>
