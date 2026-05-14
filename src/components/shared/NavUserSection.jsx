@@ -32,6 +32,7 @@ const NavUserSection = () => {
                                 <ul
                                     tabIndex="-1"
                                     className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                    <li className="font-bold">Hi, {session?.user?.name.split(" ")[0]}</li>
                                     <li>
                                         <Link href={'/profile'} className="justify-between">
                                             Profile
