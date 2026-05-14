@@ -28,8 +28,8 @@ const SignUpPage = () => {
             toast.error(error.message)
         }
         if (res) {
-            toast.success("Sign Up Successful")
-            router.push('/')
+            toast.success("Sign Up Successful. Please login Now..")
+            router.push('/auth/login')
         }
     }
     const handleGoogleLogin = async () => {
