@@ -289,6 +289,9 @@ The website is optimized for:
 ---
 
 # 📸 Screenshots
+<img width="1913" height="927" alt="image" src="https://github.com/user-attachments/assets/ccead698-1318-41f4-b8d3-e32a8a1ae274" />
+<img width="1915" height="923" alt="image" src="https://github.com/user-attachments/assets/69d5f943-4828-4b88-8ad0-dc9167fa9893" />
+<img width="1915" height="925" alt="image" src="https://github.com/user-attachments/assets/ecfdd98f-24a7-4ef9-8ac5-17fb76eb75e4" />
 
 
 ---
