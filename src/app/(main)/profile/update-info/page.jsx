@@ -50,7 +50,7 @@ const ProfileUpdatePage = async () => {
                             </div>
                         </div>
 
-                        <UpdateProfileForm></UpdateProfileForm>
+                        <UpdateProfileForm user={user}></UpdateProfileForm>
 
                     </div>
                 </div>

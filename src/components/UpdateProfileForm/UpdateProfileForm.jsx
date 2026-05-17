@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 import { FaUser } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
-const UpdateProfileForm = () => {
+const UpdateProfileForm = ({user}) => {
 
     const router = useRouter();
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -42,6 +42,7 @@ const UpdateProfileForm = () => {
                         type="text"
                         className="input w-full"
                         placeholder="Name"
+                        defaultValue={user?.name}
                         {...register("name", { required: "Name is required" })}
                     />
                     {errors.name && <small className='text-red-500'>{errors.name.message}</small>}
@@ -54,6 +55,7 @@ const UpdateProfileForm = () => {
                         type="text"
                         className="input w-full"
                         placeholder="photo"
+                        defaultValue={user?.image}
                         {...register("photo", { required: "Photo URL is Required" })} />
 
                 </fieldset>
